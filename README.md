@@ -3,8 +3,8 @@ Java utils of EnOS API SDK, see [Installing Maven](https://github.com/EnvisionIo
 
 ## Installing Java JDK SE
 
-To use the EnOS API SDK for Java, you will need **Java SE 8**.
+To use the EnOS API Utils for Java, you will need **Java SE 8**.
 
 ## Installing Maven
 
-For EnOS API SDK for Java, we recommend you to use **Maven 3**.
+For EnOS API Utils for Java, we recommend you to use **Maven 3**.
