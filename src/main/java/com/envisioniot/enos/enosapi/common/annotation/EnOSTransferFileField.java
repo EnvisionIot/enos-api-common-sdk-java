@@ -5,7 +5,7 @@ import com.envisioniot.enos.enosapi.common.enumeration.TransferType;
 import java.lang.annotation.*;
 
 /**
- * created by dongdong.wang
+ * @author dongdong.wang
  */
 @Target({ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)

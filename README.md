@@ -40,7 +40,7 @@ You can obtain the EnOS API Common SDK through the following methods:
 <dependency>
     <groupId>com.envisioniot</groupId>
     <artifactId>enos-api-common</artifactId>
-    <version>2.1.0</version>
+    <version>2.1.4</version>
     <!--You might need to change the version number as you need.-->
 </dependency>
 ```

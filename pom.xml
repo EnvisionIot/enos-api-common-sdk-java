@@ -6,7 +6,7 @@
 
     <groupId>com.envisioniot</groupId>
     <artifactId>enos-api-common</artifactId>
-    <version>2.1.0</version>
+    <version>2.1.4</version>
     <url>https://github.com/EnvisionIot/enos-api-common-sdk-java</url>
     <name>EnOS-API-COMMON</name>
 
@@ -68,6 +68,11 @@
             <version>2.4.2</version>
             <scope>compile</scope>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>19.0</version>
         </dependency>
     </dependencies>
 

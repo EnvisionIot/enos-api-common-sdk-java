@@ -25,6 +25,7 @@ public class EnOSErrorCode {
     public static final EnOSErrorCode REQUEST_BODY_TOO_LARGE = new EnOSErrorCode(413, "Request Body Too Large", PREDEFINED);
     public static final EnOSErrorCode PARAMETER_OUT_OF_RANGE = new EnOSErrorCode(415, "Parameter Out Of Range", PREDEFINED);
     public static final EnOSErrorCode RESOURCE_EXHAUSTED = new EnOSErrorCode(429, "Resource Exhausted", PREDEFINED);
+    public static final EnOSErrorCode RESULT_SIZE_TOO_LARGE = new EnOSErrorCode(430, "Result size too large", PREDEFINED);
 
     public static final EnOSErrorCode APP_TIMESTAMP_FAIL = new EnOSErrorCode(497, "App Timestamp Checked Fail", PREDEFINED);
     public static final EnOSErrorCode APP_SIGN_FAIL = new EnOSErrorCode(497, "App Signature Checked Fail", PREDEFINED);
@@ -44,7 +45,7 @@ public class EnOSErrorCode {
     public static int MAX_CODE_FOR_PREDEFINED = 599;
 
     //data service code(data app)
-    //700~
+    /**700~ */
     public static final EnOSErrorCode DATA_SERVICE_ERROR = new EnOSErrorCode(701, "data service ERROR.", USERDEFINED);
     public static final EnOSErrorCode DATA_SERVICE_EXEC_ERROR = new EnOSErrorCode(702, "An error occurred when execute query in data service.", USERDEFINED);
 
@@ -83,7 +84,9 @@ public class EnOSErrorCode {
      */
     public String getMsg(String ...reps) {
         String msg = this.msg;
-        if (msg == null) msg = "";
+        if (msg == null) {
+            msg = "";
+        }
         for (String rep : reps) {
             msg = msg.replaceAll("\\$\\{[^\\}]*\\}", rep);
         }
@@ -92,7 +95,9 @@ public class EnOSErrorCode {
     }
 
     public void setMsg(String msg, String ...reps) {
-        if (msg == null || msg.equals("")) msg = this.msg;
+        if (msg == null || msg.equals("")) {
+            msg = this.msg;
+        }
         for (String rep : reps) {
             msg = msg.replaceAll("\\$\\{[^\\}]*\\}", rep);
         }
@@ -102,7 +107,9 @@ public class EnOSErrorCode {
     public EnOSErrorCode replaceMsg(String msg, String ...reps) {
         EnOSErrorCode newCode = new EnOSErrorCode(this.code, this.msg, this.type);
 
-        if (msg == null || msg.equals("")) msg = newCode.msg;
+        if (msg == null || msg.equals("")) {
+            msg = newCode.msg;
+        }
         for (String rep : reps) {
             msg = msg.replaceAll("\\$\\{[^\\}]*\\}", rep);
         }

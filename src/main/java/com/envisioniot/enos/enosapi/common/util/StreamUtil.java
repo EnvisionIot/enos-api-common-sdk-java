@@ -1,24 +1,17 @@
 package com.envisioniot.enos.enosapi.common.util;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import com.google.common.io.CharStreams;
+
+import java.io.*;
 
 /**
- * created by dongdong.wang
+ * @author dongdong.wang
  */
 public class StreamUtil {
 
     public static String inputStreamToString(InputStream ins) throws IOException {
-        InputStream inputStream = null;
-
-        StringBuffer stringBuffer = new StringBuffer();
-        byte[] byt = new byte[4096];
-        int i;
-        while((i = ins.read(byt)) != -1) {
-            stringBuffer.append(new String(byt, 0, i));
-        }
-        return stringBuffer.toString();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(ins, "UTF-8"));
+        return CharStreams.toString(reader);
     }
 
     public static void  inputStreamToOutputStream(InputStream in, OutputStream out) throws IOException {

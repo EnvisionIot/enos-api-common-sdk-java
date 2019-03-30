@@ -5,7 +5,7 @@ import com.envisioniot.enos.enosapi.common.enumeration.TransferType;
 import java.io.File;
 
 /**
- * created by dongdong.wang
+ * @author dongdong.wang
  */
 public class EnOSTransferFileInfo {
 

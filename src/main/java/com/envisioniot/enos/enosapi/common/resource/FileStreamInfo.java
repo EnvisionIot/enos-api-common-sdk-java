@@ -3,7 +3,7 @@ package com.envisioniot.enos.enosapi.common.resource;
 import java.io.InputStream;
 
 /**
- * created by dongdong.wang
+ * @author dongdong.wang
  */
 public class FileStreamInfo {
 

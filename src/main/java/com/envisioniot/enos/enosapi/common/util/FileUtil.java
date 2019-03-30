@@ -3,7 +3,7 @@ package com.envisioniot.enos.enosapi.common.util;
 import java.io.*;
 
 /**
- * created by dongdong.wang
+ * @author dongdong.wang
  */
 public class FileUtil {
 

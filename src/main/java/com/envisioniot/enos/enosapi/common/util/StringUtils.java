@@ -85,13 +85,16 @@ public abstract class StringUtils {
      * file characters
      */
     public static String stripNonValidXMLCharacters(String input) {
-        if (input == null || ("".equals(input))) return "";
+        if (input == null || ("".equals(input))) {
+            return "";
+        }
         StringBuilder out = new StringBuilder();
         char current;
         for (int i = 0; i < input.length(); i++) {
             current = input.charAt(i);
-            if ((current == 0x9) || (current == 0xA) || (current == 0xD) || ((current >= 0x20) && (current <= 0xD7FF)) || ((current >= 0xE000) && (current <= 0xFFFD)) || ((current >= 0x10000) && (current <= 0x10FFFF)))
+            if ((current == 0x9) || (current == 0xA) || (current == 0xD) || ((current >= 0x20) && (current <= 0xD7FF)) || ((current >= 0xE000) && (current <= 0xFFFD)) || ((current >= 0x10000) && (current <= 0x10FFFF))){
                 out.append(current);
+            }
         }
         return out.toString();
     }
@@ -131,7 +134,9 @@ public abstract class StringUtils {
      * @return
      */
     public static String[] split(String line, String seperator) {
-        if (line == null || seperator == null || seperator.length() == 0) return new String[]{};
+        if (line == null || seperator == null || seperator.length() == 0) {
+            return new String[]{};
+        }
 
         ArrayList<String> list = new ArrayList<String>();
         int pos1 = 0;
@@ -157,9 +162,15 @@ public abstract class StringUtils {
      * suffix通常是"..."
      */
     public static String cutString(String str, int maxLength, String suffix) {
-        if (str == null || maxLength >= str.length()) return str;
-        if (suffix == null) suffix = "";
-        if (maxLength < 0) maxLength = str.length();
+        if (str == null || maxLength >= str.length()) {
+            return str;
+        }
+        if (suffix == null) {
+            suffix = "";
+        }
+        if (maxLength < 0) {
+            maxLength = str.length();
+        }
         return str.substring(0, maxLength) + suffix;
     }
 }

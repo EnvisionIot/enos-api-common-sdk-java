@@ -109,7 +109,9 @@ public class RuleCheckUtils {
 
     public static void checkDateFormat(String timestamp, String dateForamt) throws EnOSRuleException {
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        if (dateForamt != null && !dateForamt.isEmpty()) df = new SimpleDateFormat(dateForamt);
+        if (dateForamt != null && !dateForamt.isEmpty()) {
+            df = new SimpleDateFormat(dateForamt);
+        }
         try {
             df.parse(timestamp);
         } catch (ParseException e) {
